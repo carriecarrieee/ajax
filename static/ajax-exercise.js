@@ -19,12 +19,16 @@ function showWeather(evt) {
     evt.preventDefault();
 
     var url = "/weather.json?zipcode=" + $("#zipcode-field").val();
+    $.get(url, replaceWeather); 
+}
 
-    // TODO: request weather with that URL and show the forecast in #weather-info
+//this is all working - need to replace "test" with our weather
+function replaceWeather(results) {
+    var weather = results;
+        $('#weather-info').html("test");
 }
 
 $("#weather-form").on('submit', showWeather);
-
 
 
 
